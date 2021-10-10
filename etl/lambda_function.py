@@ -7,7 +7,7 @@ def handler(event, context):
     client = boto3.client('emr', region_name='us-east-2')
 
     cluster_id = client.run_job_flow(
-                Name='EMR-Geovani-IGTI-delta',
+                Name='EMR-Geovani-IGTI-desafio',
                 ServiceRole='EMR_DefaultRole',
                 JobFlowRole='EMR_EC2_DefaultRole',
                 VisibleToAllUsers=True,
@@ -93,7 +93,7 @@ def handler(event, context):
                                  '--conf', 'spark.sql.catalog.spark_catalog=org.apache.spark.sql.delta.catalog.DeltaCatalog', 
                                  '--master', 'yarn',
                                  '--deploy-mode', 'cluster',
-                                 's3://datalake-geovani-igti-edc-uc-tf/emr-code/pyspark/job_spark.py'
+                                 's3://datalake-geovani-igti-edc-desafio-mod1-tf/emr-code/pyspark/job_spark.py'
                                  ]
                     }
                 }],
