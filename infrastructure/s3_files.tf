@@ -1,4 +1,4 @@
-resource "aws_s3_bucket_object" "delta_insert" {
+resource "aws_s3_bucket_object" "job_spark" {
   bucket = aws_s3_bucket.dl.id
   key    = "emr-code/pyspark/job_spark.py"
   acl    = "private"
