@@ -6,16 +6,16 @@ spark = (
     .getOrCreate()
 )
 
-enem = (spark.read
+df = (spark.read
             .format("csv")
             .option("header", True)
             .option("inferSchema", True)
             .option("delimiter", ";")
-            .load("s3://datalake-geovani-igti-edc-desafio-mod1-tf/raw/")
+            .load("s3://datalake-geovani-desafio-mod1/raw/")
 )
 
 (
-    enem
+    df
     .write
     .mode("overwrite")
     .format("parquet")
