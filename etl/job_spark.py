@@ -10,7 +10,7 @@ df = (spark.read
             .format("csv")
             .option("header", True)
             .option("inferSchema", True)
-            .option("delimiter", ";")
+            .option("delimiter", "|")
             .load("s3://datalake-geovani-desafio-mod1/raw/")
 )
 
